@@ -17,11 +17,11 @@ mvn clean package
 # Run the application
 
 ```
-java -jar target/app.jar server config/dev_config.yml
+java -jar target/app.jar server config/hello-world.yml
 ```
 
 # "hello" endpoint
 
 in your web browser, visit this URL:
 
-http://localhost:8080/hello?name=Jeff
+http://localhost:8080/hello-world?name=Elena
