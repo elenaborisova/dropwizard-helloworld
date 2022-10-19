@@ -6,7 +6,19 @@ import javax.validation.constraints.NotEmpty;
 
 public class HelloWorldConfiguration extends Configuration {
     @NotEmpty
-    private String defaultName;
+    private String template;
+    @NotEmpty
+    private String defaultName = "Stranger";
+
+    @JsonProperty
+    public String getTemplate() {
+        return template;
+    }
+
+    @JsonProperty
+    public void setTemplate(String template) {
+        this.template = template;
+    }
 
     @JsonProperty
     public String getDefaultName() {

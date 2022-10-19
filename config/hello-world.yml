@@ -10,7 +10,8 @@ logging:
 
   # Logger-specific levels.
   loggers:
-
     com.github.sullis.dropwizard.helloworld: DEBUG
 
-defaultName: friend
+
+defaultName: Stranger
+template: Hello, %s!
