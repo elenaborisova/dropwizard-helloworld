@@ -16,14 +16,14 @@ public class HelloWorldApplicationTest {
 
   private static final DropwizardAppExtension<HelloWorldConfiguration> APP = new DropwizardAppExtension<>(
           HelloWorldApplication.class,
-          ResourceHelpers.resourceFilePath("test_config.yml")
+          ResourceHelpers.resourceFilePath("hello-world.yml")
   );
 
   @Test
-  public void happyPath() throws Exception {
+  public void sayHelloShouldReturnCorrectMessage() throws Exception {
     given()
       .request()
-      .get("http://localhost:" + APP.getLocalPort() + "/hello?name=Obama")
+      .get("http://localhost:" + APP.getLocalPort() + "/hello-world?name=Obama")
     .then()
         .assertThat()
         .statusCode(200)
