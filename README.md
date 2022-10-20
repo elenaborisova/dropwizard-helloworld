@@ -11,7 +11,7 @@ This project requires `Java 8` or higher
 # Build
 
 ```
-mvn clean package
+mvn package
 ```
 
 # Run the application
