@@ -28,6 +28,6 @@ public class HelloWorldApplicationTest {
         .assertThat()
         .statusCode(200)
         .contentType("application/json")
-        .body(containsString("Hello Obama"));
+        .body(containsString("Hello, Obama!"));
   }
 }
