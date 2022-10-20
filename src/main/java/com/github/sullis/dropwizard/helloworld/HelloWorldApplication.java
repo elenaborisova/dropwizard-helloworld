@@ -1,5 +1,6 @@
 package com.github.sullis.dropwizard.helloworld;
 
+import com.github.sullis.dropwizard.helloworld.healthcheck.TemplateHealthCheck;
 import com.github.sullis.dropwizard.helloworld.resources.HelloResource;
 
 import io.dropwizard.Application;
@@ -31,7 +32,12 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
                 configuration.getDefaultName()
         );
 
+        final TemplateHealthCheck healthCheck = new TemplateHealthCheck(
+                configuration.getTemplate()
+        );
+
         environment.jersey().register(resource);
+        environment.healthChecks().register("template", healthCheck);
     }
 
 }
