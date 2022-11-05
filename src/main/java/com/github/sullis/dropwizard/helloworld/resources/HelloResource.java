@@ -26,6 +26,8 @@ public class HelloResource {
     public Message sayHello(@QueryParam("name") Optional<String> name) {
         Message message = new Message();
         message.setText(String.format(template, name.orElse(defaultName)));
+
+
         return message;
     }
 }
